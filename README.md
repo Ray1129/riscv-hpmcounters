@@ -26,13 +26,15 @@ static void mstatus_init()
 {                                                            
   ...                             
   // Enable user/supervisor use of perf counters             
-  write_csr(mucounteren, -1);                                
-  write_csr(mscounteren, -1);   
+  //write_csr(mucounteren, -1);                                
+  //write_csr(mscounteren, -1);
+  write_csr(mcounteren, -1);                                
+  write_csr(scounteren, -1); 
   
   // Set the HPM event selectors as desired for your specific micro-architecture
   write_csr(mhpmevent3, 1)
   write_csr(mhpmevent4, 2)
-  write_csr(mhpmevent5, 3)
+  write_csr(mhpmevent5, 4)
   ...
 }
 ````
